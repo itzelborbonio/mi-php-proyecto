@@ -23,7 +23,7 @@ $mensaje = "";
 // Procesar formulario de agregar al carrito
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_libro'])) {
     $id_libro = intval($_POST['id_libro']);
-    $titulo = $_POST['titulo'];
+    $titulo = htmlspecialchars($_POST['titulo']);
     $precio = floatval($_POST['precio']);
 
     if (!isset($_SESSION['carrito'])) {
@@ -170,6 +170,7 @@ if (isset($_SESSION['mensaje'])) {
 </div>
 </body>
 </html>
+
 
 
 
